@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1784526652416272}
+  m_IsPrefabAsset: 1
+--- !u!1 &1784526652416272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4151787723902980}
+  - component: {fileID: 114248757293823476}
+  m_Layer: 0
+  m_Name: MapGenerator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4151787723902980
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784526652416272}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114248757293823476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784526652416272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c746f7dda7294164bbb2b33e27557af9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minMapSizeX: 32
+  maxMapSizeX: 128
+  minMapSizeZ: 32
+  maxMapSizeZ: 128
+  maxNumberOfRooms: 30
+  minRoomSizeX: 3
+  maxRoomSizeX: 10
+  minRoomSizeZ: 3
+  maxRoomSizeZ: 10
+  roomGenerationRetries: 500
+  mapPrefab: {fileID: 114924098467621096, guid: 1a0fa23f484b7b246bace35bb39acf31,
+    type: 2}
+  mapTilePrefab: {fileID: 114191140180700128, guid: 20a5bf5343175c041a21a2e6ee30143d,
+    type: 2}
+  roomPrefab: {fileID: 114318070647188868, guid: 401311f325eb69748a651dbdca5ac732,
+    type: 2}
