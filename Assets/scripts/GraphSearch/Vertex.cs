@@ -64,7 +64,7 @@ public class Vertex  {
 	 * @param e The edge connecting the vertices
 	 * @return true if succeeded connecting. false otherwise.
 	 */
-	public void addNeighbor(Vertex v,Edge e) {
+	public void addNeighbor(Vertex v,DjikGraphEdge e) {
 		neighbors.Add(v,e);
 	}
 	
@@ -102,7 +102,7 @@ public class Vertex  {
 		if( ! neighbors.ContainsKey(target) ) {
 		return 0;
 	} else {
-		Edge e = (Edge)  neighbors[target];
+		DjikGraphEdge e = (DjikGraphEdge)  neighbors[target];
 		return e.getWeight();
 		}
 	}

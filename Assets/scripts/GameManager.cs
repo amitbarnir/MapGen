@@ -19,10 +19,9 @@ public class GameManager : MonoBehaviour {
 		Vector3 startingRoomPos = theMap.getStartingRoom().transform.position;
 		thePlayer = Instantiate(playerPrefab);
 		thePlayer.transform.position = startingRoomPos;
-		thePlayer.transform.Translate(0.0f,4.0f,0.0f);
-		theCamera.transform.parent = thePlayer.transform;
-		theCamera.transform.localPosition = new Vector3(0.0f,-10.0f,0.0f);
-		theCamera.transform.localRotation = Quaternion.Euler(30.0f,0.0f,0.0f);
+//		thePlayer.transform.Translate(0.0f,4.0f,0.0f);
+		theCamera.transform.position = new Vector3(theMap.SizeX/2,30.0f,theMap.SizeZ/2) ;
+		theCamera.transform.localRotation = Quaternion.Euler(45.0f,0.0f,0.0f) ;
 		
 		
 	}

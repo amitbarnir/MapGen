@@ -3,17 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
-//	public PlayerController thePlayer;
-//	public Map theMap;
+	public Transform thePlayer;
+	public float smoothTime = 0.3f;
+	private Vector3 velocity = Vector3.zero;
+
 	// Use this for initialization
 	void Start () {
-		// this.transform.position = thePlayer.transform.position;
-		// this.transform.Translate(0.0f,0.0f,-10.0f);
-		// this.transform.Rotate(45.0f,0.0f,0.0f);
+		 GameObject playerGO = GameObject.FindGameObjectsWithTag("Player")[0];
+		 thePlayer = playerGO.transform;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+	 	// Define a target position above and behind the target transform
+        Vector3 targetPosition = thePlayer.TransformPoint(new Vector3(0, 5, -10));
+
+        // Smoothly move the camera towards that target position
+        transform.position = Vector3.SmoothDamp(transform.position, targetPosition, ref velocity, smoothTime);	
 	}
 }

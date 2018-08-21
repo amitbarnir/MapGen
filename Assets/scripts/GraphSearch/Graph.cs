@@ -24,7 +24,7 @@ public class Graph {
 	/**
 	 * a set holding the the graph edges.
 	 */
-	private HashSet<Edge> edges;
+	private HashSet<DjikGraphEdge> edges;
 	
 	/**
 	 * default constructor.
@@ -32,7 +32,7 @@ public class Graph {
 	public Graph() {
 		// instantiate private members.
 		this.vertices = new Hashtable();
-		this.edges = new HashSet<Edge>();
+		this.edges = new HashSet<DjikGraphEdge>();
 	}
 	
 	/**
@@ -66,7 +66,7 @@ public class Graph {
 		Vertex v = getVertex( vertexName );
 		ICollection edgesToNeighbors = v.getConnectedEdges();
 		
-		foreach ( Edge e in edgesToNeighbors ) {
+		foreach ( DjikGraphEdge e in edgesToNeighbors ) {
 			removeEdge( e );
 		}
 		// and finally, once disconnected from its neighbors 
@@ -90,7 +90,7 @@ public class Graph {
 		if( firstVertexName.Equals(secondVertexName) )
 			return( false );
 		// otherwise we are in the clear. connect the vertices via a new edge and return true.
-		Edge e = new Edge(vertices[firstVertexName] as Vertex, vertices[secondVertexName] as Vertex,weight);
+		DjikGraphEdge e = new DjikGraphEdge(vertices[firstVertexName] as Vertex, vertices[secondVertexName] as Vertex,weight);
 		edges.Add(e);
 		return( true );
 	}
@@ -114,7 +114,7 @@ public class Graph {
 	 * @param e Edge to remove
 	 * @return true if edge was removed, false if it wasn't
 	 */
-	public Boolean removeEdge(Edge e) {
+	public Boolean removeEdge(DjikGraphEdge e) {
 		// if the edge doesn't exist in the graph we can't remove it.
 		if(! edges.Contains(e) ) {
 			return( false );
@@ -156,19 +156,19 @@ public class Graph {
 	 * @param vertexName the vertex to get edges of
 	 * @return collection of edges connecting this vertex to its neighbors.
 	 */
-	public ICollection<Edge> getEdgesforVertex(String vertexName) {
+	public ICollection<DjikGraphEdge> getEdgesforVertex(String vertexName) {
 		// if the vertex doesn't exist, return an empty list. otherwise return connected edges.
 		Vertex v = vertices[vertexName] as Vertex; 
-		return ( v  == null) ? null :  ( v.getConnectedEdges() as ICollection<Edge>);
+		return ( v  == null) ? null :  ( v.getConnectedEdges() as ICollection<DjikGraphEdge>);
 	}
 	
 	/**
 	 * getter for the edges of this graph.
 	 * @return 
 	 */
-	public HashSet<Edge> getEdges() {
+	public HashSet<DjikGraphEdge> getEdges() {
 		// TODO: shallow or deep copy?
-		return (  new  HashSet<Edge>(this.edges) ); 
+		return (  new  HashSet<DjikGraphEdge>(this.edges) ); 
 	}
 }
 
