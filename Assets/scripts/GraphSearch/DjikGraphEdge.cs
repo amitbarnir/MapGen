@@ -83,6 +83,6 @@ public class DjikGraphEdge {
 	 */
 	private void connectNeighbors(Vertex v1, Vertex v2) {
 		v1.addNeighbor(v2, this) ;
-		//v2.addNeighbor(v1, this) ;
+		v2.addNeighbor(v1, this) ;
 	}
 }

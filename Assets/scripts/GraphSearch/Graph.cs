@@ -19,12 +19,12 @@ public class Graph {
 	 * a hashtable holding the graph vertices. 
 	 * was: Hashtable<String,Vertex>
 	 */
-	private Hashtable vertices;
+	private Hashtable vertices ;
 	
 	/**
 	 * a set holding the the graph edges.
 	 */
-	private HashSet<DjikGraphEdge> edges;
+	private HashSet<DjikGraphEdge> edges ;
 	
 	/**
 	 * default constructor.
@@ -42,7 +42,7 @@ public class Graph {
 	 */
 	public Boolean addVertex(String vertexName) {
 		// if v already exists in graph, return false
-		if( vertices.ContainsKey( (vertexName ) ) ) {
+		if( vertices.ContainsKey( vertexName ) ) {
 			return ( false );
 		}
 		// otherwise try adding it
@@ -50,13 +50,22 @@ public class Graph {
 		vertices.Add(vertexName, v);
 		return ( true );
 	}
-	
-	/**
+
+    public Boolean addVertex( Vertex v  ) {
+        // if v already exists in graph, return false
+        if ( vertices.ContainsKey( v.getName() ) )  {
+            return ( false );
+        }
+        // otherwise try adding it
+        vertices.Add( v.getName() , v );
+        return ( true );
+    }
+    /**
 	 * Remove a vertex from the graph
 	 * @param vertexName - vertex to remove
 	 * @return true if removed, false if couldn't remove
 	 */
-	public Boolean removeVertex(String vertexName) {
+    public Boolean removeVertex(String vertexName) {
 		// if v doesn't exist in graph return false
 		if( ! vertices.ContainsKey( vertexName ) ) {
 			return ( false );

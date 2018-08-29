@@ -17,14 +17,6 @@ public class Room : MonoBehaviour {
     public int XSize { get; internal set; }
     public int ZSize { get; internal set; }
 
-    // Use this for initialization
-    void Start () {
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	}
-
     internal void addTile(int x, int z, MapTile tile)
     {
 		if ( null == roomTiles ) {
@@ -36,11 +28,8 @@ public class Room : MonoBehaviour {
     internal void updateCollider()
     {
 		BoxCollider collider = GetComponent<BoxCollider>();
-//		Vector3 center = new Vector3(MinXCoord + (XSize/2f),0.0f,MinZCoord+(ZSize/2f));
-//		Vector3 center = new Vector3( (XSize/2f),0.0f,(ZSize/2f));
 		Vector3 size = new Vector3(XSize,0.0f,ZSize);
 		collider.size = size;
-//		collider.center = center ;
     }
  	
 	 void OnDrawGizmos()
