@@ -2,6 +2,7 @@
 *.png
 *.psd
 *.mat
+temp/
 .vs/
 *.fbx
 .vs/MapGen/v15/.suo
@@ -2853,3 +2854,4 @@ Library/metadata/
 ~$timesheet.xlsx
 Assembly-CSharp.csproj
 Assembly-CSharp-Editor.csproj
+timesheet.xlsx
