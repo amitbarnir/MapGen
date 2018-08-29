@@ -22,7 +22,11 @@ public class MapGenerator : MonoBehaviour {
     public Room roomPrefab;
     private Map theMap;
 
-
+    public void Update() {
+/*        if( Input.GetKey( "Fire1" ) ) {
+            genereateRandomMap();
+        }
+*/    }
     public Map genereateRandomMap() {
 
         if (theMap != null) {
@@ -32,7 +36,6 @@ public class MapGenerator : MonoBehaviour {
         theMap = Instantiate(mapPrefab) ;
         theMap.SizeX  = UnityEngine.Random.Range(minMapSizeX, maxMapSizeX);
         theMap.SizeZ = UnityEngine.Random.Range(minMapSizeZ, maxMapSizeZ);
-
         // randomly generate rooms but discard any room that overlaps existing ones.
         int roomRetries =0;
         while( roomRetries < this.roomGenerationRetries && theMap.getNumberOfRooms() < maxNumberOfRooms) {
@@ -47,7 +50,16 @@ public class MapGenerator : MonoBehaviour {
             }
             roomRetries++;
         }
+        generateRandomCorridors();
         return theMap;
+    }
+
+    private void generateRandomCorridors() {
+        WeightedGraphSearch djikstra = new WeightedGraphSearch();
+        theMap.initPathfindingGraph();
+        
+
+       
     }
 
     private void generateRoomTiles(Room r)
@@ -56,12 +68,14 @@ public class MapGenerator : MonoBehaviour {
         // TODO: fix tile coords.
         for ( int x = 0; x <  r.XSize; x++) {
             for( int z = 0; z < r.ZSize; z++ ) {
-                Vector3 relativePos = new Vector3( x+0.5f,0.0f, z+0.5f); // ??? why +0.5 works?
+                Vector3 relativePos = new Vector3( x+0.5f,0.0f, z+0.5f); // TODO: ??? why +0.5 works?
                 Vector3 offset = new Vector3(-r.XSize/2f,0,-r.ZSize/2f);
                 MapTile tile = Instantiate(mapTilePrefab);
                 tile.transform.parent = r.transform;
                 tile.transform.localPosition = relativePos + offset;
-                r.addTile(x,z,tile);
+                //TODO: find a better solution for who holds the tiles
+                theMap.addTile( r.MinXCoord + x , r.MinZCoord + z , tile );
+//                r.addTile(x,z,tile);
             }
         }
     }
@@ -73,9 +87,9 @@ public class MapGenerator : MonoBehaviour {
         r.XSize = UnityEngine.Random.Range(minRoomSizeX, maxRoomSizeX);
         r.ZSize = UnityEngine.Random.Range(minRoomSizeZ, maxRoomSizeZ);
         // randomly pick room location. 
-        r.MinXCoord = UnityEngine.Random.Range(1, maxMapSizeX - r.XSize - 1);
-        r.MinZCoord = UnityEngine.Random.Range(1, maxMapSizeZ - r.ZSize - 1);
-        r.transform.localPosition = new Vector3(r.MinXCoord+(r.XSize/2f),0.0f,r.MinZCoord+(r.ZSize/2f));
+        r.MinXCoord = UnityEngine.Random.Range(1, theMap.SizeX - r.XSize - 1);
+        r.MinZCoord = UnityEngine.Random.Range(1, theMap.SizeZ - r.ZSize - 1);
+        r.transform.position = new Vector3(r.MinXCoord+(r.XSize/2f),0.0f,r.MinZCoord+(r.ZSize/2f));
         // setup the box collider for the room's floor
         r.updateCollider();
         return r;

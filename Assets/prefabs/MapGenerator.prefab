@@ -51,15 +51,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c746f7dda7294164bbb2b33e27557af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minMapSizeX: 32
+  minMapSizeX: 64
   maxMapSizeX: 128
-  minMapSizeZ: 32
+  minMapSizeZ: 64
   maxMapSizeZ: 128
-  maxNumberOfRooms: 30
-  minRoomSizeX: 3
-  maxRoomSizeX: 10
-  minRoomSizeZ: 3
-  maxRoomSizeZ: 10
+  maxNumberOfRooms: 20
+  minRoomSizeX: 6
+  maxRoomSizeX: 18
+  minRoomSizeZ: 6
+  maxRoomSizeZ: 18
   roomGenerationRetries: 500
   mapPrefab: {fileID: 114924098467621096, guid: 1a0fa23f484b7b246bace35bb39acf31,
     type: 2}
