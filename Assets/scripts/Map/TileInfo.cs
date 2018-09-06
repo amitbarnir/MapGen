@@ -6,18 +6,18 @@ using UnityEngine;
 public class TileInfo {
 
 	private MapTile tile;
-	private Vertex vertex;
+	private VertexOld vertex;
 	private int x;
 	private int z;
 
-	public TileInfo(int x, int z, Vertex v) {
+	public TileInfo(int x, int z, VertexOld v) {
 		this.x = x;
 		this.z = z;
 		this.tile = null;
 		this.vertex = v;
 	}
 
-	public TileInfo(int x, int z, MapTile tile, Vertex v) {
+	public TileInfo(int x, int z, MapTile tile, VertexOld v) {
 		this.x = x;
 		this.z = z;
 		this.tile = tile;
@@ -39,7 +39,7 @@ public class TileInfo {
         set {z = value;}
     }
 
-    public Vertex Vertex {
+    public VertexOld Vertex {
         get { return vertex;}
         set { vertex = value;}
     }

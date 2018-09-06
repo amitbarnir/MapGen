@@ -100,7 +100,7 @@ public class DebugGraphSearch : MonoBehaviour {
     private void testGraph3()
     {
    		WeightedGraphSearch dijkstra = new WeightedGraphSearch();
-		LinkedList<Vertex> path = new LinkedList<Vertex>();
+		LinkedList<VertexOld> path = new LinkedList<VertexOld>();
 		path = dijkstra.searchGraph(graph3.getVertex(NODE_A), graph3.getVertex(NODE_I) );
 		Debug.Assert( path.Count == 6 );
 		Debug.Assert(path.Last.Value == graph3.getVertex(NODE_A));
@@ -115,7 +115,7 @@ public class DebugGraphSearch : MonoBehaviour {
     private void testGraph1()
     {
    		WeightedGraphSearch dijkstra = new WeightedGraphSearch();
-		LinkedList<Vertex> path = new LinkedList<Vertex>();
+		LinkedList<VertexOld> path = new LinkedList<VertexOld>();
 		path = dijkstra.searchGraph(graph1.getVertex(NODE_A), graph1.getVertex(NODE_B) );
 		Debug.Assert( path.Count != 0 );
 		// make sure we found a path between indirectly connected nodes.
@@ -129,7 +129,7 @@ public class DebugGraphSearch : MonoBehaviour {
 	private void testGraph2()
     {
         WeightedGraphSearch dijkstra = new WeightedGraphSearch();
-		LinkedList<Vertex> path = new LinkedList<Vertex>();
+		LinkedList<VertexOld> path = new LinkedList<VertexOld>();
 
 		path = dijkstra.searchGraph(graph2.getVertex(NODE_A), graph2.getVertex(NODE_E) );
 		// did we find the shortest possible path?

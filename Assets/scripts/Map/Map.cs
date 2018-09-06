@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using TriangleNet.Geometry;
 using UnityEngine;
 
 public class Map : MonoBehaviour {
@@ -50,7 +51,7 @@ public class Map : MonoBehaviour {
         for( int x = 0 ; x < SizeX ; x++ ) {
             for( int z = 0 ; z < SizeZ ; z++ ) {
                 String s = x + "." + z;
-                Vertex v = new Vertex( s );
+                VertexOld v = new VertexOld( s );
                 currentTile = new TileInfo(x,z,v);
                 searchGraph.addVertex( v );
                 tiles[x,z] = currentTile;
@@ -81,6 +82,21 @@ public class Map : MonoBehaviour {
         }
     }
 
+    internal Vertex[] getRoomCenterVertices() {
+        int roomCount = this.getNumberOfRooms();
+        int centerX = 0;
+        int centerZ = 0;
+
+        Vertex[] roomCenters = new Vertex[ roomCount ];
+        for ( int i = 0 ; i < roomCount ; i++ ) {
+            Room r = (Room)rooms[ i ];
+            centerX = r.MinXCoord + r.XSize / 2;
+            centerZ = r.MinZCoord + r.ZSize / 2;
+            roomCenters[ i ] = new Vertex(centerX,centerZ);
+        }
+        return roomCenters;
+    }
+
     private void connectToNeighbour( TileInfo tile, int leftOrRight,int upOrDown) {
         TileInfo neighbour = tiles[tile.X + leftOrRight,tile.Z + upOrDown];
         //TODO: make weight adjustable from unity.
@@ -90,5 +106,9 @@ public class Map : MonoBehaviour {
             weight = 0;
         }
         searchGraph.addWeightedEdge( tile.Vertex.getName() , neighbour.Vertex.getName() , weight );
+    }
+
+    internal MapTile getTile( int x , int z ) {
+        return tiles[ x , z ].Tile;
     }
 }

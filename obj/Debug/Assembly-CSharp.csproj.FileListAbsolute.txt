@@ -162,3 +162,7 @@ C:\Users\amit\Dropbox\unity projects\MapGen\obj\Debug\Assembly-CSharp.pdb
 C:\Users\amit\Dropbox\unity projects\MapGen\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
 C:\Users\amit\Dropbox\unity projects\MapGen\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
 C:\Users\amit\Dropbox\unity projects\MapGen\obj\Debug\Assembly-CSharp.csproj.CopyComplete
+C:\Users\amit\Dropbox\unity projects\MapGen\Temp\bin\Debug\Unity.PackageManagerUI.Editor.dll
+C:\Users\amit\Dropbox\unity projects\MapGen\Temp\bin\Debug\Unity.TextMeshPro.dll
+C:\Users\amit\Dropbox\unity projects\MapGen\Temp\bin\Debug\Unity.TextMeshPro.Editor.dll
+C:\Users\amit\Dropbox\unity projects\MapGen\Temp\bin\Debug\UnityEditor.StandardEvents.dll

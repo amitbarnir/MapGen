@@ -10,7 +10,7 @@ using UnityEngine;
  *
  */
 
-public class Vertex  {
+public class VertexOld  {
 
 	/**
 	 * identifier of this vertex. 
@@ -27,7 +27,7 @@ public class Vertex  {
 	 * constructor 
 	 * @param name The name of this node
 	 */
-	public Vertex(String name) {
+	public VertexOld(String name) {
 		this.name = name;
 		this.neighbors = new Hashtable();
 	}
@@ -54,7 +54,7 @@ public class Vertex  {
 	 * @param v the vertex to test.
 	 * @return true if the vertices are directly connected. false otherwise
 	 */
-	public bool hasNeighbor(Vertex v) {
+	public bool hasNeighbor(VertexOld v) {
 		return( neighbors.ContainsKey(v) );
 	}
 	
@@ -64,7 +64,7 @@ public class Vertex  {
 	 * @param e The edge connecting the vertices
 	 * @return true if succeeded connecting. false otherwise.
 	 */
-	public void addNeighbor(Vertex v,DjikGraphEdge e) {
+	public void addNeighbor(VertexOld v,DjikGraphEdge e) {
 		neighbors.Add(v,e);
 	}
 	
@@ -89,7 +89,7 @@ public class Vertex  {
 	 * @param v the vertex to remove
 	 * @return true if succeeded, false if failed to remove
 	 */
-	public void removeNeighbor(Vertex v) {
+	public void removeNeighbor(VertexOld v) {
 		 neighbors.Remove(v);
 	}
 
@@ -98,7 +98,7 @@ public class Vertex  {
 	 * @param target The neighboring vertex 
 	 * @return the weight of the edge between this vertex and the neighboring vertex. or 0 otherwise.
 	 */
-	public int getEdgeWeighToNeighbor(Vertex target) {
+	public int getEdgeWeighToNeighbor(VertexOld target) {
 		if( ! neighbors.ContainsKey(target) ) {
 		return 0;
 	} else {

@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour {
 		thePlayer.transform.position = startingRoomPos;
 		theCamera.transform.position = new Vector3(theMap.SizeX/2,30.0f,theMap.SizeZ/2) ;
 		theCamera.transform.localRotation = Quaternion.Euler(45.0f,0.0f,0.0f) ;
+        theCamera.findPlayer();
 		
 		
 	}

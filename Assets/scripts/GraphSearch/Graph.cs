@@ -46,12 +46,12 @@ public class Graph {
 			return ( false );
 		}
 		// otherwise try adding it
-		Vertex v = new Vertex(vertexName);
+		VertexOld v = new VertexOld(vertexName);
 		vertices.Add(vertexName, v);
 		return ( true );
 	}
 
-    public Boolean addVertex( Vertex v  ) {
+    public Boolean addVertex( VertexOld v  ) {
         // if v already exists in graph, return false
         if ( vertices.ContainsKey( v.getName() ) )  {
             return ( false );
@@ -72,7 +72,7 @@ public class Graph {
 		}
 
 		// if it does exist, iterate over the edges connected to it and remove them
-		Vertex v = getVertex( vertexName );
+		VertexOld v = getVertex( vertexName );
 		ICollection edgesToNeighbors = v.getConnectedEdges();
 		
 		foreach ( DjikGraphEdge e in edgesToNeighbors ) {
@@ -98,9 +98,13 @@ public class Graph {
 		// also, don't allow self-loops... 
 		if( firstVertexName.Equals(secondVertexName) )
 			return( false );
-		// otherwise we are in the clear. connect the vertices via a new edge and return true.
-		DjikGraphEdge e = new DjikGraphEdge(vertices[firstVertexName] as Vertex, vertices[secondVertexName] as Vertex,weight);
-		edges.Add(e);
+        // otherwise we are in the clear. connect the vertices via a new edge and return true.
+        try {
+            DjikGraphEdge e = new DjikGraphEdge( vertices[ firstVertexName ] as VertexOld , vertices[ secondVertexName ] as VertexOld , weight );
+            edges.Add( e );
+        } catch ( Exception ex ) {
+            Debug.Log( "Could not connect " + firstVertexName + " and " + secondVertexName );
+        }
 		return( true );
 	}
 
@@ -139,8 +143,8 @@ public class Graph {
 	 * @param vertexName the vertex to retrieve
 	 * @return the Vertex identified by name. null if doesn't exist. 
 	 */
-	public Vertex getVertex(String vertexName) {
-		return vertices[vertexName] as Vertex;
+	public VertexOld getVertex(String vertexName) {
+		return vertices[vertexName] as VertexOld;
 	}
 	
 	/**
@@ -155,8 +159,8 @@ public class Graph {
 			return ( false );
 		}
 		// ask  one of them if it is connected to the other and propagate its answer.
-		Vertex v1 = vertices[firstVertexName] as Vertex;
-		Vertex v2 = vertices[secondVertexName] as Vertex;
+		VertexOld v1 = vertices[firstVertexName] as VertexOld;
+		VertexOld v2 = vertices[secondVertexName] as VertexOld;
 		return ( v1.hasNeighbor(v2) ) ;
 	}
 	
@@ -167,7 +171,7 @@ public class Graph {
 	 */
 	public ICollection<DjikGraphEdge> getEdgesforVertex(String vertexName) {
 		// if the vertex doesn't exist, return an empty list. otherwise return connected edges.
-		Vertex v = vertices[vertexName] as Vertex; 
+		VertexOld v = vertices[vertexName] as VertexOld; 
 		return ( v  == null) ? null :  ( v.getConnectedEdges() as ICollection<DjikGraphEdge>);
 	}
 	

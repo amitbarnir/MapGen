@@ -3,7 +3,12 @@ guid: e8e1700afdff431449569d7bb914e87d
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - mapGeneratorPrefab: {fileID: 114248757293823476, guid: 87ea9825216bee24195d281cbad75eed,
+      type: 2}
+  - playerPrefab: {fileID: 114685047784833218, guid: b54bb0b3b09dc84439a55b64ee31043e,
+      type: 2}
+  - theCamera: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

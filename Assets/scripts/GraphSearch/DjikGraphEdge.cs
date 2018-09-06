@@ -17,12 +17,12 @@ public class DjikGraphEdge {
 	/**
 	 * The first vertex this edge connects.
 	 */
-	private Vertex v1 ;
+	private VertexOld v1 ;
 
 	/**
 	 * The second vertex this edge connects.
 	 */
-	private Vertex v2 ;
+	private VertexOld v2 ;
 	
 	/**
 	 * The weight of traversing this edge.
@@ -36,7 +36,7 @@ public class DjikGraphEdge {
 	 * @param weight the weight of the edge
 	 */
 
-	public DjikGraphEdge(Vertex v1,Vertex v2, int weight) {
+	public DjikGraphEdge(VertexOld v1,VertexOld v2, int weight) {
 		this.v1 = v1;
 		this.v2 = v2;
 		this.weight = weight;
@@ -48,7 +48,7 @@ public class DjikGraphEdge {
 	 * Get the first Vertex
 	 * @return the first vertex
 	 */
-	public Vertex getFirstVertex() {
+	public VertexOld getFirstVertex() {
 		return ( v1 );
 	}
 	
@@ -56,7 +56,7 @@ public class DjikGraphEdge {
 	 * Get the second vertex
 	 * @return the second vertex
 	 */
-	public Vertex getSecondVertex() {
+	public VertexOld getSecondVertex() {
 		return ( v2 );
 	}
 	
@@ -81,7 +81,7 @@ public class DjikGraphEdge {
 	 * @param v1 first vertex to connect
 	 * @param v2 second vertex to connect
 	 */
-	private void connectNeighbors(Vertex v1, Vertex v2) {
+	private void connectNeighbors(VertexOld v1, VertexOld v2) {
 		v1.addNeighbor(v2, this) ;
 		v2.addNeighbor(v1, this) ;
 	}

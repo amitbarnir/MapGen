@@ -1,29 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//TODO: do i need this? nope
 public class CorridorMaker {
+}
+
+/*    private Graph graph;
+    private WeightedGraphSearch djikstra = new WeightedGraphSearch();
 
     private Map theMap;
     public Map TheMap
     {
-        get
-        {
-            return theMap;
-        }
-
-        set
-        {
-            theMap = value;
-        }
+        get  { return theMap; }
+        set  { theMap = value;}
     }
-    private Graph graph = new Graph();
-    private WeightedGraphSearch djikstra = new WeightedGraphSearch();
+
+    public CorridorMaker(Graph g) {
+        this.graph = g;
+    }
+
 
     public CorridorMaker(Map m) {
         this.theMap = m;
     }
-
+    
     private bool initializeGraph()
     {
         int sizeX = theMap.SizeX;
@@ -39,12 +39,4 @@ public class CorridorMaker {
         }
         return true;
     }
-
-    private bool createRoomTileMap()
-    {
-        return true;
-    }
-    
-    
-
-}
+}*/

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour {
-	public Transform thePlayer;
+	public Transform thePlayer = null;
 	public float smoothTime = 0.3f;
 	private Vector3 velocity = Vector3.zero;
 
 	// Use this for initialization
-	void Start () {
+	public void findPlayer () {
 		 GameObject playerGO = GameObject.FindGameObjectsWithTag("Player")[0];
 		 thePlayer = playerGO.transform;
 	}

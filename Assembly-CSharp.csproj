@@ -23,7 +23,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_2_2;UNITY_2018_2;UNITY_2018;PLATFORM_ARCH_64;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_EVENT_QUEUE;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_2_6;UNITY_2018_2;UNITY_2018;PLATFORM_ARCH_64;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_TEXTURE_STREAMING;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_VIDEO;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_LOCALIZATION;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_EVENT_QUEUE;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;DEVELOPMENT_BUILD;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -50,7 +50,7 @@
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
-    <UnityVersion>2018.2.2f1</UnityVersion>
+    <UnityVersion>2018.2.6f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -106,6 +106,7 @@
     <Compile Include="Assets\LowpolyDungeonAssets\Demo Scene\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
     <Compile Include="Assets\LowpolyDungeonAssets\Demo Scene\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
     <Compile Include="Assets\LowpolyDungeonAssets\Demo Scene\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
+    <Compile Include="Assets\scripts\Algorithms\Kruskal.cs" />
     <Compile Include="Assets\scripts\CameraController.cs" />
     <Compile Include="Assets\scripts\CorridorMaker.cs" />
     <Compile Include="Assets\scripts\Debug\DebugDrawWireFrame.cs" />
@@ -121,6 +122,92 @@
     <Compile Include="Assets\scripts\Map\TileInfo.cs" />
     <Compile Include="Assets\scripts\MapGenerator.cs" />
     <Compile Include="Assets\scripts\PlayerController.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Behavior.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Configuration.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Enums.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Geometry\Contour.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Geometry\Edge.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Geometry\ExtensionMethods.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Geometry\IEdge.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Geometry\IPolygon.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Geometry\ISegment.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Geometry\ITriangle.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Geometry\Point.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Geometry\Polygon.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Geometry\Rectangle.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Geometry\RegionPointer.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Geometry\Segment.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Geometry\Vertex.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\IO\DebugWriter.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\IO\FileProcessor.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\IO\IFileFormat.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\IO\IMeshFormat.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\IO\InputTriangle.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\IO\IPolygonFormat.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\IO\TriangleFormat.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\IO\TriangleReader.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\IO\TriangleWriter.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\IPredicates.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Log.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Logging\ILog.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Logging\ILogItem.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Logging\LogItem.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Mesh.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\Algorithm\Dwyer.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\Algorithm\Incremental.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\Algorithm\SweepLine.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\ConstraintMesher.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\ConstraintOptions.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\Converter.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\Data\BadSubseg.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\Data\BadTriangle.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\Data\BadTriQueue.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\GenericMesher.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\IConstraintMesher.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\IMesh.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\IQualityMesher.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\Iterators\EdgeIterator.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\Iterators\RegionIterator.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\Iterators\VertexCirculator.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\ITriangulator.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\QualityMesher.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Meshing\QualityOptions.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\MeshValidator.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\NewLocation.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Properties\AssemblyInfo.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\RobustPredicates.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Smoothing\ISmoother.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Smoothing\SimpleSmoother.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Smoothing\VoronoiFactory.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Tools\AdjacencyMatrix.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Tools\CuthillMcKee.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Tools\Interpolation.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Tools\IntersectionHelper.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Tools\PolygonValidator.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Tools\QualityMeasure.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Tools\Statistic.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Tools\TriangleQuadTree.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Tools\VertexSorter.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Topology\DCEL\DcelMesh.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Topology\DCEL\Face.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Topology\DCEL\HalfEdge.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Topology\DCEL\Vertex.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Topology\Osub.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Topology\Otri.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Topology\SubSegment.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Topology\Triangle.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\TriangleLocator.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\TrianglePool.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\TriangleSampler.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Voronoi\BoundedVoronoi.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Voronoi\DefaultVoronoiFactory.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Voronoi\IVoronoiFactory.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Voronoi\Legacy\BoundedVoronoiLegacy.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Voronoi\Legacy\IVoronoi.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Voronoi\Legacy\SimpleVoronoi.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Voronoi\Legacy\VoronoiRegion.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Voronoi\StandardVoronoi.cs" />
+    <Compile Include="Assets\scripts\Triangle.NET\Voronoi\VoronoiBase.cs" />
     <None Include="Assets\LowpolyDungeonAssets\Demo Scene\PostProcessing\Resources\Shaders\DepthOfField.shader" />
     <None Include="Assets\LowpolyDungeonAssets\Demo Scene\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
     <None Include="Assets\LowpolyDungeonAssets\Demo Scene\PostProcessing\Resources\Shaders\Fog.shader" />
@@ -248,6 +335,9 @@
     </Reference>
     <Reference Include="UnityEngine.ParticleSystemModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticlesLegacyModule">
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.PerformanceReportingModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
