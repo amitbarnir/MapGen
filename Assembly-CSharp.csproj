@@ -208,6 +208,8 @@
     <Compile Include="Assets\scripts\Triangle.NET\Voronoi\Legacy\VoronoiRegion.cs" />
     <Compile Include="Assets\scripts\Triangle.NET\Voronoi\StandardVoronoi.cs" />
     <Compile Include="Assets\scripts\Triangle.NET\Voronoi\VoronoiBase.cs" />
+    <Compile Include="Assets\scripts\util\Constants.cs" />
+    <Compile Include="Assets\scripts\util\HelperFunctions.cs" />
     <None Include="Assets\LowpolyDungeonAssets\Demo Scene\PostProcessing\Resources\Shaders\DepthOfField.shader" />
     <None Include="Assets\LowpolyDungeonAssets\Demo Scene\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
     <None Include="Assets\LowpolyDungeonAssets\Demo Scene\PostProcessing\Resources\Shaders\Fog.shader" />

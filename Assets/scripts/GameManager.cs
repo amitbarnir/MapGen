@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour {
 
 	public CameraController theCamera;
 	private MapGenerator mapGenInstance = null;
-    private CorridorMaker corridorMaker = null;
 	private Map theMap;
 	
 	private PlayerController thePlayer;

@@ -51,19 +51,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c746f7dda7294164bbb2b33e27557af9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minMapSizeX: 64
-  maxMapSizeX: 128
-  minMapSizeZ: 64
-  maxMapSizeZ: 128
-  maxNumberOfRooms: 20
-  minRoomSizeX: 6
-  maxRoomSizeX: 18
-  minRoomSizeZ: 6
-  maxRoomSizeZ: 18
+  minMapSizeX: 200
+  maxMapSizeX: 400
+  minMapSizeZ: 200
+  maxMapSizeZ: 400
+  maxNumberOfRooms: 50
+  minRoomSizeX: 10
+  maxRoomSizeX: 30
+  minRoomSizeZ: 10
+  maxRoomSizeZ: 30
   roomGenerationRetries: 500
   mapPrefab: {fileID: 114924098467621096, guid: 1a0fa23f484b7b246bace35bb39acf31,
     type: 2}
   mapTilePrefab: {fileID: 114191140180700128, guid: 20a5bf5343175c041a21a2e6ee30143d,
     type: 2}
   roomPrefab: {fileID: 114318070647188868, guid: 401311f325eb69748a651dbdca5ac732,
+    type: 2}
+  corridorMakerPrefab: {fileID: 114091122732550188, guid: 69b8aba1d328c0a4db8ff24d679e8a1f,
     type: 2}

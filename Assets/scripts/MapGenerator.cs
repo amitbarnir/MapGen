@@ -22,9 +22,12 @@ public class MapGenerator : MonoBehaviour {
     public Map mapPrefab;
     public MapTile mapTilePrefab;
     public Room roomPrefab;
+    public CorridorMaker corridorMakerPrefab;
+
     private Map theMap;
     private TriangleNet.Mesh mesh = null;
     private List<Edge> minimumSpanningTree = null;
+    private CorridorMaker corridorMaker = null;
 
 
     public void Update() {
@@ -86,68 +89,19 @@ public class MapGenerator : MonoBehaviour {
         }
         // triangulate it using Delaunay's triangulation
         TriangleNet.Meshing.ConstraintOptions options =
-            new TriangleNet.Meshing.ConstraintOptions() { ConformingDelaunay = true };
+            new TriangleNet.Meshing.ConstraintOptions() { ConformingDelaunay = false };
 
         mesh = (TriangleNet.Mesh)polygon.Triangulate(options);
         // build a minimum spanning tree of the graph represented by the mesh.
         Kruskal.Kruskal mspBuilder = new Kruskal.Kruskal();
         minimumSpanningTree = mspBuilder.run(mesh);
-
+        
+        if( corridorMaker == null ) {
+            corridorMaker = Instantiate( corridorMakerPrefab );
+        }
+        corridorMaker.generateCorridorsFromEdges( minimumSpanningTree , mesh,theMap );
         return theMap;
     }
-    /*
-        private bool someRoomsAreNotReachable() {
-            WeightedGraphSearch djikstra = new WeightedGraphSearch();
-            VertexOld[] roomCenters = theMap.getRoomCenterVertices();
-            for ( int i = 0 ; i < roomCenters.Length ; i++ ) {
-                for ( int j = i + 1 ; j < roomCenters.Length ; j++ ) {
-                    if( djikstra.searchGraph(roomCenters[i],roomCenters[j]).Count == 0) {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
-
-        private void generateShortestCorridor() {
-            WeightedGraphSearch djikstra = new WeightedGraphSearch();
-            Vertex[] roomCenters = theMap.getRoomCenterVertices();
-            LinkedList<VertexOld> minRoute     = null;
-            LinkedList<VertexOld> tempRoute    = null;
-            int minRouteLength = 0;
-            // go over all room to room permutations
-            for ( int i = 0 ; i < roomCenters.Length ; i++ ) {
-                for ( int j = i+1 ; j < roomCenters.Length ; j++ ) {
-                    tempRoute = djikstra.searchGraph( roomCenters[ i ] , roomCenters[ j ] );
-                    // and find the shortest unconnected path from room to room
-                    if ( tempRoute.Count < minRouteLength ) {
-                        minRouteLength = tempRoute.Count;
-                        minRoute = tempRoute;
-                    }
-                }
-            }
-            carveCorridor( minRoute );
-
-        }
-    */
-    private void carveCorridor( LinkedList<VertexOld> minRoute ) {
-        foreach ( VertexOld vertex in minRoute ) {
-            //TODO: this is retarded. find a more efficient way of doing this
-            char[] delimeter = { '.' };
-            String[] coords = vertex.getName().Split( delimeter ) ;
-
-            int x = Int32.Parse( coords[ 0 ] );
-            int z = Int32.Parse( coords[ 1 ] );
-            if ( theMap.getTile(x,z) != null ) {
-                MapTile tile = Instantiate( mapTilePrefab );
-                //tile.transform.parent = r.transform;
-                tile.transform.position = new Vector3( x , 0.0f , z );
-                //TODO: find a better solution for who holds the tiles
-                theMap.addTile( x , z , tile );
-            }
-        }
-    }
-
     private void generateRoomTiles(Room r)
     {
          // create room tiles
@@ -161,7 +115,6 @@ public class MapGenerator : MonoBehaviour {
                 tile.transform.localPosition = relativePos + offset;
                 //TODO: find a better solution for who holds the tiles
                 theMap.addTile( r.MinXCoord + x , r.MinZCoord + z , tile );
-//                r.addTile(x,z,tile);
             }
         }
     }
@@ -175,9 +128,64 @@ public class MapGenerator : MonoBehaviour {
         // randomly pick room location. 
         r.MinXCoord = UnityEngine.Random.Range(1, theMap.SizeX - r.XSize - 1);
         r.MinZCoord = UnityEngine.Random.Range(1, theMap.SizeZ - r.ZSize - 1);
-        r.transform.position = new Vector3(r.MinXCoord+(r.XSize/2f),0.0f,r.MinZCoord+(r.ZSize/2f));
+        r.transform.position = new Vector3Int(r.MinXCoord+(r.XSize/2),0,r.MinZCoord+(r.ZSize/2));
         // setup the box collider for the room's floor
         r.updateCollider();
         return r;
     }
 }
+
+
+/* 10/09/2018
+    private bool someRoomsAreNotReachable() {
+        WeightedGraphSearch djikstra = new WeightedGraphSearch();
+        VertexOld[] roomCenters = theMap.getRoomCenterVertices();
+        for ( int i = 0 ; i < roomCenters.Length ; i++ ) {
+            for ( int j = i + 1 ; j < roomCenters.Length ; j++ ) {
+                if( djikstra.searchGraph(roomCenters[i],roomCenters[j]).Count == 0) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    private void generateShortestCorridor() {
+        WeightedGraphSearch djikstra = new WeightedGraphSearch();
+        Vertex[] roomCenters = theMap.getRoomCenterVertices();
+        LinkedList<VertexOld> minRoute     = null;
+        LinkedList<VertexOld> tempRoute    = null;
+        int minRouteLength = 0;
+        // go over all room to room permutations
+        for ( int i = 0 ; i < roomCenters.Length ; i++ ) {
+            for ( int j = i+1 ; j < roomCenters.Length ; j++ ) {
+                tempRoute = djikstra.searchGraph( roomCenters[ i ] , roomCenters[ j ] );
+                // and find the shortest unconnected path from room to room
+                if ( tempRoute.Count < minRouteLength ) {
+                    minRouteLength = tempRoute.Count;
+                    minRoute = tempRoute;
+                }
+            }
+        }
+        carveCorridor( minRoute );
+
+    }
+
+private void carveCorridor( LinkedList<VertexOld> minRoute ) {
+    foreach ( VertexOld vertex in minRoute ) {
+        //TODO: this is retarded. find a more efficient way of doing this
+        char[] delimeter = { '.' };
+        String[] coords = vertex.getName().Split( delimeter ) ;
+
+        int x = Int32.Parse( coords[ 0 ] );
+        int z = Int32.Parse( coords[ 1 ] );
+        if ( theMap.getTile(x,z) != null ) {
+            MapTile tile = Instantiate( mapTilePrefab );
+            //tile.transform.parent = r.transform;
+            tile.transform.position = new Vector3( x , 0.0f , z );
+            //TODO: find a better solution for who holds the tiles
+            theMap.addTile( x , z , tile );
+        }
+    }
+}
+*/
