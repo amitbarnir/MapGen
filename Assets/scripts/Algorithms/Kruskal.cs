@@ -35,20 +35,10 @@ namespace Kruskal
     {
         public List<KEdge> Edgecoll = null;
         public KVertex[] vertcoll = null;
-//        KVertex v = null;
 
         public KGraph(int size)
         {
             vertcoll = new KVertex[size];
-/*            for (int i = 0; i < size; i++)
-            {
-                v = new KVertex();
-                v.Label = i.ToString();
-                vertcoll[i] = v;
-            }
-
-        }
-*/
         }
     }
     class KSubsets

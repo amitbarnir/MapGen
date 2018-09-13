@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4851109211185788}
-  - component: {fileID: 114191140180700128}
+  - component: {fileID: 114605024840244736}
   m_Layer: 0
   m_Name: MapTile
   m_TagString: Untagged
@@ -113,7 +113,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1278920216973438}
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114191140180700128
+--- !u!114 &114605024840244736
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

@@ -63,7 +63,7 @@ MonoBehaviour:
   roomGenerationRetries: 500
   mapPrefab: {fileID: 114924098467621096, guid: 1a0fa23f484b7b246bace35bb39acf31,
     type: 2}
-  mapTilePrefab: {fileID: 114191140180700128, guid: 20a5bf5343175c041a21a2e6ee30143d,
+  mapTilePrefab: {fileID: 114605024840244736, guid: 20a5bf5343175c041a21a2e6ee30143d,
     type: 2}
   roomPrefab: {fileID: 114318070647188868, guid: 401311f325eb69748a651dbdca5ac732,
     type: 2}

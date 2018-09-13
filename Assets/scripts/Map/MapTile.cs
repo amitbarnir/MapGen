@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: do i need this class?
 public class MapTile : MonoBehaviour {
 
 	// Use this for initialization

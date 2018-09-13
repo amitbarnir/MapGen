@@ -16,7 +16,7 @@ public class Map : MonoBehaviour {
     }
 
     private List<Room> rooms;
-    private TileInfo[,] tiles;
+    private MapTile[,] tiles;
 
     // Use this for initialization
     void Start () {
@@ -46,19 +46,19 @@ public class Map : MonoBehaviour {
     }
     
     internal void initMap() {
-        TileInfo currentTile = null;
-        tiles = new TileInfo[SizeX,SizeZ];
+//        TileInfo currentTile = null;
+        tiles = new MapTile[SizeX,SizeZ];
         Debug.Log("Map size: (" + SizeX + "," + SizeZ + ")");
-        for( int x = 0 ; x < SizeX ; x++ ) {
-            for( int z = 0 ; z < SizeZ ; z++ ) {
-                String s = x + "." + z;
-                VertexOld v = new VertexOld( s );
-                currentTile = new TileInfo(x,z,v);
-//                searchGraph.addVertex( v );
-                tiles[x,z] = currentTile;
+        /*        for( int x = 0 ; x < SizeX ; x++ ) {
+                    for( int z = 0 ; z < SizeZ ; z++ ) {
+                        String s = x + "." + z;
+                        VertexOld v = new VertexOld( s );
+                        currentTile = new TileInfo(x,z,v);
+        //                searchGraph.addVertex( v );
+                        tiles[x,z] = currentTile;
+                    }
             }
-        }
-
+*/
     }
 
     internal Room getRoomByCenter( Vector3 roomCenter ) {
@@ -74,7 +74,7 @@ public class Map : MonoBehaviour {
         if( null == tiles ) {
             initMap();
         }
-        tiles[x,z].Tile = tile;
+        tiles[x,z] = tile;
     }
 
     internal Vertex[] getRoomCenterVertices() {
@@ -93,42 +93,7 @@ public class Map : MonoBehaviour {
     }
 
     internal MapTile getTile( int x , int z ) {
-        return tiles[ x , z ].Tile;
+        return tiles[ x , z ];
     }
 }
 
-// 06/09/2018
-/*
-    internal void initPathfindingGraph()
-    {
-        TileInfo tile;
-        for( int x = 1; x < SizeX-1; x++ ) {
-            for ( int z = 1 ; z < SizeZ -1 ; z++ ) {
-                tile = tiles[ x , z ];
-                // todo: 8 neighbors.
-                connectToNeighbour( tile, mapDirection.none, mapDirection.up );
-                connectToNeighbour( tile , mapDirection.none , mapDirection.down );
-                connectToNeighbour( tile , mapDirection.left , mapDirection.none );
-                connectToNeighbour( tile , mapDirection.right , mapDirection.none );
-            }
-        }
-    }
-    private void connectToNeighbour( TileInfo tile, int leftOrRight,int upOrDown) {
-        TileInfo neighbour = tiles[tile.X + leftOrRight,tile.Z + upOrDown];
-        //TODO: make weight adjustable from unity.
-        int weight = 1;
-        // if both have tiles, this means they are both in a room so movement is easier
-        if ( tile.Tile != null && neighbour.Tile != null ) {
-            weight = 0;
-        }
-        searchGraph.addWeightedEdge( tile.Vertex.getName() , neighbour.Vertex.getName() , weight );
-    }
-    
-    private struct mapDirection {
-        public const int up = -1;
-        public const int down = 1;
-        public const int left = -1;
-        public const int right = 1;
-        public const int none = 0;
-    }
-    */

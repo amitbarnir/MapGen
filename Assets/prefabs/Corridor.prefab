@@ -9,49 +9,33 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1601710250936184}
+  m_RootGameObject: {fileID: 1548856007420174}
   m_IsPrefabAsset: 1
---- !u!1 &1601710250936184
+--- !u!1 &1548856007420174
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4012139620021116}
-  - component: {fileID: 114091122732550188}
+  - component: {fileID: 4328789808532348}
   m_Layer: 0
-  m_Name: CorridorMaker
+  m_Name: Corridor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4012139620021116
+--- !u!4 &4328789808532348
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1601710250936184}
+  m_GameObject: {fileID: 1548856007420174}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.104006, y: 1.2220769, z: 75.18057}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114091122732550188
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1601710250936184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82dc6c952eb622f4fb85deae7d0d12bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mapTilePF: {fileID: 114605024840244736, guid: 20a5bf5343175c041a21a2e6ee30143d,
-    type: 2}
-  minimumCorridorWidth: 2
-  maximumCorridorWidth: 4
